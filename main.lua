@@ -1,11 +1,13 @@
 require("player1")
 require("ball")
 require("player2")
+require("score")
 
 function love.load()
     Player1:load()
     Ball:load()
     Player2:load()
+    Score:load()
 
     Sounds = {}
     Sounds.hit = love.audio.newSource("sounds/hit.wav", "static")
@@ -23,6 +25,7 @@ function love.draw()
     Player1:draw()
     Ball:draw()
     Player2:draw()
+    Score:draw()
 end
 
 

@@ -8,13 +8,14 @@ function Ball:load()
     self.y = love.graphics.getHeight() / 2
     self.hitP1 = false
     self.xVel = self.speed
-    self.yVel = 0
+    self.yVel = math.random(-600, 600)
 end
 
 
 function Ball:update(dt)
     Ball:move(dt)
     Ball:isColliding()
+    print(self.yVel)
 end
 
 
@@ -50,6 +51,20 @@ function Ball:isColliding()
     elseif self.y + self.height / 2 > love.graphics.getHeight() then
         self.yVel = -self.yVel
         love.audio.play(Sounds.hit)
+    end
+    
+    if self.x - self.width / 2 < 0 then
+        self.x = love.graphics.getWidth() / 2
+        self.y = love.graphics.getHeight() / 2
+        self.yVel = math.random(-400, 400)
+        self.hitP1 = true
+        Score:update(1)
+    elseif self.x + self.width > love.graphics.getWidth() then
+        self.x = love.graphics.getWidth() / 2
+        self.y = love.graphics.getHeight() / 2
+        self.yVel = math.random(-400, 400)
+        self.hitP1 = false
+        Score:update(2)
     end
 end
 
