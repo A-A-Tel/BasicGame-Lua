@@ -11,6 +11,7 @@ function love.load()
 
     Sounds = {}
     Sounds.hit = love.audio.newSource("sounds/hit.wav", "static")
+    Sounds.point = love.audio.newSource("sounds/point.wav", "static")
 end
 
 

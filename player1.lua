@@ -1,11 +1,11 @@
 Player1 = {}
 
 function Player1:load()
-    self.x = 80
-    self.y = love.graphics.getHeight() / 2
     self.width = 20
     self.height = 100
-    self.speed = 500
+    self.speed = love.graphics.getHeight() / 1.5
+    self.x = 80
+    self.y = love.graphics.getHeight() / 2
 end
 
 

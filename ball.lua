@@ -3,7 +3,7 @@ Ball = {}
 function Ball:load()
     self.width = 20
     self.height = 20
-    self.speed = 500
+    self.speed = love.graphics.getWidth() / 1.2
     self.x = love.graphics.getWidth() / 2
     self.y = love.graphics.getHeight() / 2
     self.hitP1 = false
@@ -35,13 +35,13 @@ function Ball:isColliding()
         if CollisionCheck(self, Player2) then
             self.hitP1 = false
             local collidePos = self.y - Player2.y
-            self.yVel = collidePos * 7
+            self.yVel = collidePos * 20
         end
     else
         if CollisionCheck(self, Player1) then
             self.hitP1 = true
             local collidePos = self.y - Player1.y
-            self.yVel = collidePos * 7
+            self.yVel = collidePos * 20
         end
     end
 
