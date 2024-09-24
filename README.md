@@ -1,5 +1,5 @@
 # BasicGame-Lua
- Basic pong recreation using LÖVE
+ Basic pong recreation using the LÖVE framework
 
 W/S for p1
 
